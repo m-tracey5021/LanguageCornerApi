@@ -102,9 +102,70 @@ namespace LanguageCornerApi
         [JsonConverter(typeof(SingleOrArrayConverter<LCTranslationValue>))]
         public List<LCTranslationValue> Turkish { get; set; }
 
+        public List<LCTranslationValue> GetTranslationValue(string code){
+            if (code == "ar"){
+                return Arabic;
+            }else if (code == "zh"){
+                return Chinese;
+            }else if (code == "cs"){
+                return Czech;
+            }else if (code == "dk"){
+                return Danish;
+            }else if (code == "nl"){
+                return Dutch;
+            }else if (code == "en"){
+                return English;
+            }else if (code == "fr"){
+                return French;
+            }else if (code == "de"){
+                return German;
+            }else if (code == "el"){
+                return Greek;
+            }else if (code == "he"){
+                return Hebrew;
+            }else if (code == "hi"){
+                return Hindi;
+            }else if (code == "it"){
+                return Italian;
+            }else if (code == "ja"){
+                return Japanese;
+            }else if (code == "ko"){
+                return Korean;
+            }else if (code == "la"){
+                return Latin;
+            }else if (code == "no"){
+                return Norwegian;
+            }else if (code == "pl"){
+                return Polish;
+            }else if (code == "pt"){
+                return Portuguese;
+            }else if (code == "br"){
+                return BrazilianPortuguese;
+            }else if (code == "ru"){
+                return Russian;
+            }else if (code == "es"){
+                return Spanish;
+            }else if (code == "sv"){
+                return Swedish;
+            }else if (code == "th"){
+                return Thai;
+            }else if (code == "tr"){
+                return Turkish;
+            }else{
+                throw new Exception("Code does not correspond to a supported language");
+            }
+        }
+        public List<string> GetTranslationList(string code){
 
+            List<LCTranslationValue> values = GetTranslationValue(code);
 
+            List<string> translationList = new List<string>();
 
+            foreach (LCTranslationValue value in values){
+                translationList.Add(value.Text);
+            }
+
+            return translationList;
+        }
     }
-
 }

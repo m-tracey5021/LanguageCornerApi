@@ -13,10 +13,10 @@ namespace LanguageCornerApi
         public string Language { get; set; }
 
         [JsonProperty("headword")]
-        public Headword Headword { get; set; }
+        public LCHeadword Headword { get; set; }
 
         [JsonProperty("senses")]  
-        public List<Sense> Senses { get; set; }
+        public List<LCSense> Senses { get; set; }
 
         [JsonProperty("related_entries")]
         public List<string> RelatedEntries { get; set; }

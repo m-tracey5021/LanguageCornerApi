@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace LanguageCornerApi
 {
-    public class Example
+    public class LCExample
     {
         [JsonProperty("text")]
         public string Text { get; set; }
