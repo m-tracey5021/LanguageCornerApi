@@ -12,6 +12,15 @@ namespace LanguageCornerApi
         [JsonProperty("translations")]
         public LCTranslation Translations { get; set; }
 
+        public List<string> GetTranslationList(string code){
+            if (Translations != null){
+                return Translations.GetTranslationList(code);
+            }else{
+                return new List<string>();
+            }
+            
+        }
+
     }
 
 }

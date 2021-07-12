@@ -85,7 +85,20 @@ namespace LanguageCornerApi
 
             return exampleTexts;
         }
+        
+        public List<string> GetIndividualTranslations(string code){
+            return Translation.GetTranslationList(code);
+        }
 
+        public Dictionary<string, List<string>> GetExampleTranslations(string code){
+            Dictionary<string, List<string>> exampleTranslations = new Dictionary<string, List<string>>();
+            foreach (LCExample example in Examples){
+                exampleTranslations.Add(example.Text, example.GetTranslationList(code));
+            }
+            return exampleTranslations;
+        }
     }
+
+    
 
 }
