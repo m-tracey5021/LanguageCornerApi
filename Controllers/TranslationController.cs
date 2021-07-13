@@ -36,9 +36,9 @@ namespace LanguageCornerApi.Controllers
 
             // List<Translation> translations = await GetTranslation(source, target, original);
             // return translations;
-
+            
             List<Word> translations = await GetTranslation(source, target, original);
-            WordData data = new WordData { Words = translations };
+            WordData data = new WordData { Search = original, Words = translations };
             return data;
 
         }

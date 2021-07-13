@@ -6,6 +6,7 @@ namespace LanguageCornerApi
     public class WordData
     {
         public Guid Id { get; set; }
+        public string Search { get; set; }
         public List<Word> Words { get; set; }
 
         public WordData(){
